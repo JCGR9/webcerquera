@@ -6,6 +6,7 @@ import styles from './Header.module.css'
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,6 +21,7 @@ export default function Header() {
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' })
         }
+        setMenuOpen(false)
     }
 
     return (
@@ -28,13 +30,27 @@ export default function Header() {
                 <div className={styles.container}>
                     <Logo variant="header" onClick={() => scrollToSection('hero')} />
 
-                    <nav className={styles.nav}>
+                    {/* Botón hamburguesa para móvil */}
+                    <button 
+                        className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        aria-label="Abrir menú"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
                         <button onClick={() => scrollToSection('hero')}>Inicio</button>
                         <button onClick={() => scrollToSection('sobre-nosotros')}>Sobre Nosotros</button>
                         <button onClick={() => scrollToSection('contacto')}>Contacto</button>
                     </nav>
                 </div>
             </header>
+
+            {/* Overlay para cerrar el menú */}
+            {menuOpen && <div className={styles.overlay} onClick={() => setMenuOpen(false)} />}
         </>
     )
 }
