@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Lato } from 'next/font/google'
+import { Playfair_Display, Lato, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
-import { CartProvider } from '@/context/CartContext'
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
     variable: '--font-heading',
+    display: 'swap',
+})
+
+const cormorant = Cormorant_Garamond({
+    weight: ['400', '500', '600', '700'],
+    subsets: ['latin'],
+    variable: '--font-elegant',
     display: 'swap',
 })
 
@@ -28,11 +34,9 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="es" className={`${playfair.variable} ${lato.variable}`}>
+        <html lang="es" className={`${playfair.variable} ${lato.variable} ${cormorant.variable}`}>
             <body>
-                <CartProvider>
-                    {children}
-                </CartProvider>
+                {children}
             </body>
         </html>
     )

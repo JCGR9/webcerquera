@@ -8,7 +8,7 @@ export default function AboutSection() {
                     <h2 className={styles.title}>Nuestra Historia</h2>
                     <div className={styles.text}>
                         <p>
-                            Desde 1985, <strong>Cerquera Joyería</strong> ha sido sinónimo de elegancia,
+                            Desde 1965, <strong>Cerquera Joyería</strong> ha sido sinónimo de elegancia,
                             calidad y distinción. Cada pieza que creamos es el resultado de décadas de
                             experiencia y pasión por el arte de la joyería.
                         </p>
@@ -42,7 +42,7 @@ export default function AboutSection() {
                                     </svg>
                                 </div>
                                 <h4>Confianza</h4>
-                                <p>Más de 35 años de experiencia y tradición familiar</p>
+                                <p>Más de 60 años de experiencia y tradición familiar</p>
                             </div>
                         </div>
                     </div>

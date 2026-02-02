@@ -16,8 +16,8 @@
 }
 
 /* Variantes de tamaño */
-.logoContainer.header {
-    width: 220px;
+.header {
+    width: 180px;
     height: auto;
 }
 
